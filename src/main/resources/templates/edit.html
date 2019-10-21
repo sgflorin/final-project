@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout=”http://www.ultraq.net.nz/thymeleaf/layout” layout:decorate="~{layout/main}">
+<head>
+    <title>Add trip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+    <div class="container">
+        <form class="form-horizontal" method="POST" th:action="@{/editTrip(id=${trip.id})}" th:object="${trip}">
+            <fieldset>
+
+                <!-- Trip form -->
+                <legend>Edit this trip!</legend>
+
+                <!-- Name input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="tripName">Name:</label>
+                    <div class="col-md-5">
+                        <input id="tripName" th:field="*{name}" name="tripName" type="text" placeholder="" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <!-- Location input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="tripLocation">Location:</label>
+                    <div class="col-md-2">
+                        <input id="tripLocation" th:field="*{location}" name="tripLocation" type="text" placeholder="" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+
+                <!-- Start date input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="tripStart">Start date:</label>
+                    <div class="col-md-2">
+                        <input id="tripStart" th:field="*{startDate}" name="tripStart" type="text" placeholder="" class="form-control input-md" required="">
+                        <span class="help-block">DD-MM-YYYY</span>
+                    </div>
+                </div>
+
+
+                <!-- End date input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="tripEnd">End date:</label>
+                    <div class="col-md-2">
+                        <input id="tripEnd" th:field="*{endDate}" name="tripEnd" type="text" placeholder="" class="form-control input-md" required="">
+                        <span class="help-block">DD-MM-YYYY</span>
+                    </div>
+                </div>
+
+                <!-- Impressions -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="tripImpressions">Impressions:</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="tripImpressions" th:field="*{impression}" name="tripImpressions"></textarea>
+                    </div>
+                </div>
+
+
+                <!-- Photo details 1 -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="photo1details">Photo 1 details:</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="photo1details" th:field="*{details1}" name="photo1details"></textarea>
+                    </div>
+                </div>
+
+
+
+                <!-- Photo details 2 -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="photo2details">Photo 2 details:</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="photo2details" th:field="*{details2}" name="photo2details"></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="submit"></label>
+                    <div class="col-md-4">
+                        <button id="submit" name="submit" class="btn btn-success">Edit trip!</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Register</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+
+</head>
+
+<body>
+<div class="container">
+<form class="form-horizontal" method="post" th:action="@{/confirmeduser}" th:object="${user}" autocomplete="off">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Create account!</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="FirstName">First Name:</label>
+            <div class="col-md-4">
+                <input id="FirstName" th:field="*{firstName}" name="FirstName" type="text" placeholder="" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="LastName">Last Name:</label>
+            <div class="col-md-4">
+                <input id="LastName" th:field="*{lastName}" name="LastName" type="text" placeholder="" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="UserName">Username:</label>
+            <div class="col-md-4">
+                <input id="UserName" th:field="*{username}" name="UserName" type="text" placeholder="" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="password">Password:</label>
+            <div class="col-md-4">
+                <input id="password" th:field="*{password}" name="password" type="password" placeholder="" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Email">Email:</label>
+            <div class="col-md-4">
+                <input id="Email" th:field="*{email}" name="Email" type="text" placeholder="" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="submit"></label>
+            <div class="col-md-4">
+                <button id="submit" name="submit" class="btn btn-success">Register!</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</div>
+
+</body>
+</html>

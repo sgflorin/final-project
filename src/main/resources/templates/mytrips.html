@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout=”http://www.ultraq.net.nz/thymeleaf/layout” layout:decorate="~{layout/main}">
+<head>
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div layout:fragment="content">
+
+
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-xl-6">
+                <div>&nbsp;</div>
+                <div class="row" >
+                    <div class="col-xl-6">
+                        <select onchange="window.location.href='/mytrips?id='+this.value;" class="form-control" style="width:250px;">
+                            <option th:each="trip : ${mytrips}"
+                                    th:value="${trip.id}"
+                                    th:text="${trip.name}"
+                                    th:selected="${trip.id == selectedId}">
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-xl-6" style="align-items: center">
+                        <a th:href="'/edit?id=' + ${currentTrip.id}" class="btn btn-info">Edit</a>
+                        <a th:href="'/delete?id=' + ${currentTrip.id}" class="btn btn-danger">Delete</a>
+                        <a href="/addtrip" class="btn btn-success">Add trip</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div>&nbsp;</div>
+                <div class="row">
+                    <div class="col-xl-6"><h4><span th:text="${currentTrip.location}"></span></h4></div>
+                    <div class="col-xl-6"><h4><span th:text="${currentTrip.startDate}"></span> to <span th:text="${currentTrip.endDate}"></span></h4></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="col-md col-12" style="border: thin #EF080C">
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <div class="thumbnail">
+                                <h5 class="mt-0 mb-1">My impression:</h5>
+                                <div>&nbsp;</div>
+
+                                <p><span th:text="${currentTrip.impression}"></span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-xl-6">
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="gallery">
+                            <div class="thumbnail"> <a href="#"><img src="Curs Java\project\project\src\main\resources\static" alt="" width="300" class="cards"/></a>
+                                <h4>My first photo</h4>
+                                <p class="text_column"><span th:text="${currentTrip.details1}"></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-xl-6">
+                        <div class="gallery">
+                            <div class="thumbnail"> <a href="#"><img src="C:\Users\User\Desktop\img\placeholder300.jpg" alt="" width="300" class="cards"/></a>
+                                <h4>My second photo</h4>
+                                <p class="text_column"><span th:text="${currentTrip.details2}"></span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+
+
+</div>
+</body>
+</html>
